@@ -82,6 +82,7 @@ To build this project from source, you will need:
 3. Select your preferred AI Provider.
 4. (Optional) Provide a specific model name, or leave it blank to use the default.
 5. Enter your API Key and click **Save & Back**.
+   > **Security Note:** Your API key is securely stored in your browser's local storage. It is never sent to external servers, ensuring it cannot be exploited or accessed by the bot.
 6. Start asking questions! The bot will instantly read the page you are on and answer based on its content.
 
 ---
