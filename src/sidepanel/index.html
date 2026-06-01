@@ -36,17 +36,19 @@
             <option value="grok">Grok</option>
             <option value="glm">GLM (Zhipu)</option>
           </select>
+          <div class="setting-desc">Choose the AI provider you wish to use.</div>
         </div>
         <div class="setting-group">
           <label>Model</label>
           <input type="text" id="modelInput" placeholder="e.g. gemini-1.5-pro" />
+          <div class="setting-desc">Specify a unique model name for your account.</div>
         </div>
         <div class="setting-group">
           <label>API Key</label>
           <input type="password" id="apiKeyInput" placeholder="Enter API Key" />
-          <small style="display: block; margin-top: 8px; font-size: 0.8rem; color: #888; line-height: 1.4;">
-            🔒 Your API key is securely stored in your browser's local storage. It is never sent to external servers, ensuring it cannot be exploited or accessed by the bot.
-          </small>
+          <div class="setting-desc">
+            Must be valid. 🔒 Securely stored locally.
+          </div>
         </div>
         <button id="saveBtn">Save & Back</button>
       </main>

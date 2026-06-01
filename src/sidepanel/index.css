@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: #0a0a0a;
+  color: #ededed;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -20,18 +20,16 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #222;
 }
 
 header h1 {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  background: linear-gradient(90deg, #38bdf8, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ededed;
 }
 
 header button {
@@ -40,6 +38,7 @@ header button {
   cursor: pointer;
   font-size: 16px;
   transition: transform 0.2s ease;
+  color: #ededed;
 }
 header button:hover {
   transform: rotate(45deg);
@@ -69,9 +68,9 @@ main {
 
 .message {
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 8px;
   max-width: 85%;
-  line-height: 1.4;
+  line-height: 1.5;
   font-size: 14px;
   animation: slideIn 0.3s ease;
 }
@@ -83,16 +82,16 @@ main {
 
 .message.system {
   align-self: flex-start;
-  background-color: #1e293b;
-  border: 1px solid #334155;
-  border-bottom-left-radius: 4px;
+  background-color: #141414;
+  border: 1px solid #222;
+  color: #d1d5db;
 }
 
 .message.user {
   align-self: flex-end;
-  background: linear-gradient(135deg, #0284c7, #4338ca);
-  color: white;
-  border-bottom-right-radius: 4px;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: #ededed;
 }
 
 .input-area {
@@ -105,9 +104,9 @@ input[type="text"], input[type="password"], select {
   flex: 1;
   padding: 10px 14px;
   border-radius: 8px;
-  border: 1px solid #334155;
-  background-color: #1e293b;
-  color: white;
+  border: 1px solid #333;
+  background-color: #111;
+  color: #ededed;
   font-family: inherit;
   font-size: 14px;
   outline: none;
@@ -115,45 +114,53 @@ input[type="text"], input[type="password"], select {
 }
 
 input:focus, select:focus {
-  border-color: #38bdf8;
+  border-color: #666;
 }
 
 button#sendBtn, button#saveBtn {
-  background: linear-gradient(135deg, #38bdf8, #818cf8);
-  color: white;
-  border: none;
+  background-color: #ededed;
+  color: #111;
+  border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 button#sendBtn:hover, button#saveBtn:hover {
-  opacity: 0.9;
+  background-color: #fff;
 }
 
 /* Settings View */
 #settingsView h2 {
   margin-top: 0;
   font-size: 18px;
+  color: #ededed;
 }
 
 .setting-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .setting-group label {
   font-size: 14px;
-  color: #94a3b8;
+  font-weight: 600;
+  color: #ededed;
+}
+
+.setting-desc {
+  font-size: 13px;
+  color: #888;
+  margin-top: -4px;
 }
 
 #loadingIndicator {
   font-size: 12px;
-  color: #94a3b8;
+  color: #888;
   margin-top: 8px;
   animation: pulse 1.5s infinite;
 }
@@ -167,8 +174,8 @@ button#sendBtn:hover, button#saveBtn:hover {
 /* Markdown Styles */
 .message.system p { margin: 0 0 10px 0; }
 .message.system p:last-child { margin-bottom: 0; }
-.message.system pre { background-color: #0f172a; padding: 10px; border-radius: 6px; overflow-x: auto; font-family: monospace; }
-.message.system code { background-color: #0f172a; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+.message.system pre { background-color: #0a0a0a; padding: 10px; border-radius: 6px; overflow-x: auto; font-family: monospace; border: 1px solid #222; }
+.message.system code { background-color: #0a0a0a; padding: 2px 4px; border-radius: 4px; font-family: monospace; border: 1px solid #222; }
 .message.system ul, .message.system ol { margin: 0 0 10px 0; padding-left: 20px; }
-.message.system a { color: #38bdf8; text-decoration: none; }
-.message.system a:hover { text-decoration: underline; }
+.message.system a { color: #888; text-decoration: underline; }
+.message.system a:hover { color: #ededed; }
