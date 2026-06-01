@@ -5,7 +5,9 @@ use serde_json::json;
 
 #[wasm_bindgen]
 pub async fn process_llm_request(provider: String, api_key: String, model: String, prompt: String, context: String) -> Result<JsValue, JsValue> {
-    let system_instruction = "You are an AI assistant that answers questions strictly based on the provided webpage context. If the user's question is unrelated to the provided webpage context, do not attempt to answer it. Instead, reply saying that the information asked is beyond the scope of the webpage data provided.";
+    let system_instruction = "You are an AI assistant that answers questions based on the provided webpage context. If the user's question relates to concepts, 
+    topics, or code snippets present in the webpage context, provide a helpful and valid response. 
+    Only if the question is completely unrelated to the provided context, reply saying that the information asked is beyond the scope of the webpage data provided.";
     let full_prompt = format!("{}\n\nContext from web page:\n{}\n\nUser Question:\n{}", system_instruction, context, prompt);
 
     let (url, body, auth_header, auth_val, extra_headers) = match provider.as_str() {
