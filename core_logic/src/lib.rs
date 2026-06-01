@@ -31,9 +31,7 @@ pub async fn process_llm_request(provider: String, api_key: String, model: Strin
             let body = json!({
                 "contents": [{"parts": [{"text": full_prompt}]}]
             });
-            let url = format!("https://generativelanguage.googleapis.com/v1beta/models/{}:generateContent?key={}", model, api_key);
-            // Gemini passes key in URL
-            // Return empty strings for headers to skip auth header injection
+
             (url, body, "", "".to_string(), vec![])
         },
         "grok" => {
@@ -86,11 +84,11 @@ pub async fn process_llm_request(provider: String, api_key: String, model: Strin
     
     console::time_end_with_label("rust-json-parse");
     
-    // Log the raw JSON string for debugging
+    
     let stringified = js_sys::JSON::stringify(&json_value).unwrap_or_else(|_| js_sys::JsString::from("{}"));
     console::log_1(&JsValue::from_str(&format!("[Rust] JSON response: {}", stringified.as_string().unwrap_or_default())));
     
-    // Parse response generically based on provider
+    
     let res_text: String = match provider.as_str() {
         "openai" | "grok" | "glm" => {
             let js_obj = js_sys::Reflect::get(&json_value, &JsValue::from_str("choices"))?;
