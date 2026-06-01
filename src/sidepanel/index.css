@@ -162,3 +162,13 @@ button#sendBtn:hover, button#saveBtn:hover {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
+
+
+/* Markdown Styles */
+.message.system p { margin: 0 0 10px 0; }
+.message.system p:last-child { margin-bottom: 0; }
+.message.system pre { background-color: #0f172a; padding: 10px; border-radius: 6px; overflow-x: auto; font-family: monospace; }
+.message.system code { background-color: #0f172a; padding: 2px 4px; border-radius: 4px; font-family: monospace; }
+.message.system ul, .message.system ol { margin: 0 0 10px 0; padding-left: 20px; }
+.message.system a { color: #38bdf8; text-decoration: none; }
+.message.system a:hover { text-decoration: underline; }

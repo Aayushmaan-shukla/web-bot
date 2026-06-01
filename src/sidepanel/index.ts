@@ -1,4 +1,5 @@
 import init, { process_llm_request } from '../pkg/core_logic.js';
+import { marked } from 'marked';
 
 // State
 let apiKey = '';
@@ -77,7 +78,11 @@ saveBtn.addEventListener('click', () => {
 function addMessage(content: string, role: 'user' | 'system') {
   const div = document.createElement('div');
   div.className = `message ${role}`;
-  div.textContent = content;
+  if (role === 'system') {
+    div.innerHTML = marked.parse(content) as string;
+  } else {
+    div.textContent = content;
+  }
   chatHistory.appendChild(div);
   chatHistory.scrollTop = chatHistory.scrollHeight;
 }
