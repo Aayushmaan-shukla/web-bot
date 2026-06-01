@@ -33,7 +33,7 @@ pub async fn process_llm_request(provider: String, api_key: String, model: Strin
             let body = json!({
                 "contents": [{"parts": [{"text": full_prompt}]}]
             });
-
+            let url = format!("https://generativelanguage.googleapis.com/v1beta/models/{}:generateContent?key={}", model, api_key);
             (url, body, "", "".to_string(), vec![])
         },
         "grok" => {
