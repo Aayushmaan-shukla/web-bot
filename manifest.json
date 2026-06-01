@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Web AI Bot",
+  "version": "1.0.0",
+  "description": "LLM Chrome Extension for Contextual Code Understanding",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/index.ts"
+      ]
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "action": {
+    "default_title": "Click to open side panel"
+  }
+}

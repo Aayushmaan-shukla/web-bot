@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web AI Bot</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Web AI Bot</h1>
+        <button id="settingsBtn" title="Settings">⚙️</button>
+      </header>
+      
+      <main id="chatView">
+        <div id="chatHistory">
+          <div class="message system">Hello! I am your AI assistant. How can I help you understand this page?</div>
+        </div>
+        <div id="loadingIndicator" class="hidden">Thinking...</div>
+        <div class="input-area">
+          <input type="text" id="chatInput" placeholder="Ask about the page..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </main>
+
+      <main id="settingsView" class="hidden">
+        <h2>Settings</h2>
+        <div class="setting-group">
+          <label>Provider</label>
+          <select id="providerSelect">
+            <option value="openai">OpenAI (GPT-4o)</option>
+            <option value="anthropic">Anthropic (Claude 3)</option>
+            <option value="gemini">Gemini (1.5 Pro)</option>
+            <option value="grok">Grok</option>
+            <option value="glm">GLM (Zhipu)</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label>Model</label>
+          <input type="text" id="modelInput" placeholder="e.g. gemini-1.5-pro" />
+        </div>
+        <div class="setting-group">
+          <label>API Key</label>
+          <input type="password" id="apiKeyInput" placeholder="Enter API Key" />
+        </div>
+        <button id="saveBtn">Save & Back</button>
+      </main>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
