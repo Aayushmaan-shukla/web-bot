@@ -1,4 +1,4 @@
-# Web AI Bot 🤖🕸️
+# Web AI Bot 
 
 Web AI Bot is a powerful, context-aware Chrome Extension built with **Vite, TypeScript, and Rust WebAssembly**. It acts as your personal AI assistant, seamlessly reading the content of any webpage you are currently on and allowing you to ask questions about it directly from a sleek browser side panel.
 
@@ -6,7 +6,7 @@ By leveraging a highly optimized Rust Wasm backend, the extension securely route
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Context-Aware Chat:** Automatically extracts and understands text from your currently active tab.
 - **Multiple LLM Providers:** Bring your own API keys for:
@@ -21,7 +21,7 @@ By leveraging a highly optimized Rust Wasm backend, the extension securely route
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 The architecture relies on the Chrome Manifest V3 standard paired with a custom WebAssembly logic core:
 
@@ -31,7 +31,7 @@ The architecture relies on the Chrome Manifest V3 standard paired with a custom 
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -75,10 +75,10 @@ To build this project from source, you will need:
 
 ---
 
-## 🛠️ Usage
+##  Usage
 
 1. Open the Side Panel on any webpage.
-2. Click the **⚙️ Settings Gear** in the top right.
+2. Click the **Settings Gear** in the top right.
 3. Select your preferred AI Provider.
 4. (Optional) Provide a specific model name, or leave it blank to use the default.
 5. Enter your API Key and click **Save & Back**.
@@ -86,6 +86,6 @@ To build this project from source, you will need:
 
 ---
 
-## 📄 License
+##  License
 
 This project is open-source and available under the MIT License.
